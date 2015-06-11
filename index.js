@@ -7,11 +7,11 @@ var writePath = path.join(__dirname, 'new');
 
 fs.readdir(readPath, function(err, files) {
   if (!err) {
-    files.forEach(function(image) {
-      im(path.join(readPath, image))
+    files.forEach(function(file) {
+      im(path.join(readPath, file))
       .resize(400, 300)
-      .write(path.join(writePath, image), function(err) {
-        if (!err) console.log(image + ' resized.');
+      .write(path.join(writePath, file), function(err) {
+        if (!err) console.log(file + ' resized.');
       });
     });
   }
